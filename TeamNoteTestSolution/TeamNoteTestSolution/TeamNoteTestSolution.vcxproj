@@ -148,6 +148,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\bitpartite_matching.h" />
+    <ClInclude Include="..\..\convex_hull.h" />
+    <ClInclude Include="DFS_BFS_module.h" />
+    <ClInclude Include="graph.h" />
+    <ClInclude Include="Usage.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

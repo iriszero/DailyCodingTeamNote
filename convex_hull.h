@@ -10,6 +10,7 @@
 #endif
 
 #include <vector>
+#include <algorithm>
 #define lld long long int
 using namespace std;
 

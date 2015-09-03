@@ -19,4 +19,21 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\bitpartite_matching.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\convex_hull.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Usage.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="graph.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DFS_BFS_module.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
