@@ -1,53 +1,38 @@
 //
 //  convex_hull.h
-//  0903
+//  DailyCodingTeamNote
 //
-//  Created by IRIS on 9/3/15.
+//  Created by MaybeS on 10/3/15.
+//  Copyright (c) 2015 Maybe. All rights reserved.
 //
-
-#ifndef _convex_hull_h
-#define _convex_hull_h
-#endif
-
+#include <utility>
 #include <vector>
 #include <algorithm>
-#define lld long long int
-using namespace std;
 
-struct Point {
-    int x, y;
-    
-    bool operator <(const Point&p) const{
-        return y>p.y || (y==p.y && x<p.x);
-        
-    }
-};
-
-lld outer_product (const Point& O, const Point& A, const Point &B) {
-    
-    return (lld)(A.x - O.x)*(B.y - O.y) - (lld)(A.y  - O.y) * (B.x - O.x);
+//ConvexHull
+template<typename type>
+type cross(const pair<type,type> &O, const pair<type, type> &A, const pair<type, type> &B)
+{
+    return (type)(A.first - O.first) * (B.second - O.second) - (type)(A.second - O.second) * (B.first - O.first);
 }
-
-vector<Point> convex_hull(vector<Point> P) {
-    /*
-    param:: vector of Point with x,y coordinates in long long int, P.size >= 3
-    return:: convex_hull with x, y coordinates in long long int
-     the first and the last element is SAME
-     */
-    
-    int n = (int)P.size(), k=0;
-    vector<Point> H(2*n);
-    sort(P.begin(), P.end());
-    //Lower
-    for (auto now: P) {
-        while(k>=2 && outer_product(H[k-2], H[k-1], now) >=0) k--;
-        H[k++] = now;
+template<typename type>
+vector<pair<type,type>> convex_hull(vector<pair<type, type>> map)
+{
+    int k = 0;
+    vector<pair<type, type>> result(2 * map.size());
+    sort(map.begin(), map.end(), [](pair<type,type> p, pair<type,type> q) { return p.second > q.second || ((!(p.second < q.second) && p.first < q.first)); });
+    for (int i = 0; i < map.size(); ++i) 
+    {
+        while (k >= 2 && cross<type>(result[k - 2], result[k - 1], map[i]) <= 0) 
+            k--;
+        result[k++] = map[i];
     }
-    //Upper
-    for (int i=n-2, t=k+1; i>=0; i--) {
-        while(k>=t && outer_product(H[k-2], H[k-1], P[i]) >=0)k--;
-        H[k++] = P[i];
+    for (int i = map.size() - 2, t = k + 1; i >= 0; i--) 
+    {
+        while (k >= t && cross<type>(result[k - 2], result[k - 1], map[i]) <= 0)
+            k--;
+        result[k++] = map[i];
     }
-    H.resize(k);
-    return H;
+    result.resize(k);
+    return result;
 }
