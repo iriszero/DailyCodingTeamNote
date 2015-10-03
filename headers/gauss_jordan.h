@@ -7,15 +7,16 @@
 //
 #include <vector>
 #include <utility>
-#include <algorith,>
+#include <algorithm>
 // INPUT:    a[][] = an nxn matrix
 //           b[][] = an nxm matrix
 //
 // OUTPUT:   X      = an nxm matrix (stored in b[][])
 //           A^{-1} = an nxn matrix (stored in a[][])
 //           returns determinant of a[][]
+using namespace std;
 template <typename type>
-type GaussJordan(vector<vector<type>> &a, vector<vector<type>> &b) {
+type GaussJordan(vector<vector<type> > &a, vector<vector<type> > &b) {
   const int n = a.size();
   const int m = b[0].size();
   vector<int> irow(n), icol(n), ipiv(n);
@@ -26,7 +27,7 @@ type GaussJordan(vector<vector<type>> &a, vector<vector<type>> &b) {
     for (int j = 0; j < n; j++) if (!ipiv[j])
       for (int k = 0; k < n; k++) if (!ipiv[k])
 	if (pj == -1 || fabs(a[j][k]) > fabs(a[pj][pk])) { pj = j; pk = k; }
-    if (fabs(a[pj][pk]) < 1e-10) { cerr << "Matrix is singular." << endl; exit(0); }
+    if (fabs(a[pj][pk]) < 1e-10) { return -1; }
     ipiv[pk]++;
     swap(a[pj], a[pk]);
     swap(b[pj], b[pk]);

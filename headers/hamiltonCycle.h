@@ -10,7 +10,7 @@
 using namespace std;
 //HamiltonCircuit
 //input vector<vector<boo>> map;
-bool hamiltonCycle_sub(vecotr<vector<bool>> map, vector<int> path, int pos)
+bool hamiltonCycle_sub(vector<vector<bool> > map, vector<int> path, int pos)
 {
 	if(pos == map.size())
 		if(map[path[pos-1]][path[0]]==1)
@@ -40,7 +40,7 @@ bool hamiltonCycle_sub(vecotr<vector<bool>> map, vector<int> path, int pos)
 	}
 	return false;
 }
-bool hamiltonCycle(vector<vector<bool>> map)
+bool hamiltonCycle(vector<vector<bool> > map)
 {
 	vector<int> path(map.size(),-1);
 	path[0] = 0;

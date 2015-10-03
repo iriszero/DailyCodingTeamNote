@@ -8,7 +8,7 @@
 #include <utility>
 #include <vector>
 #include <algorithm>
-
+using namespace std;
 //ConvexHull
 template<typename type>
 type cross(const pair<type,type> &O, const pair<type, type> &A, const pair<type, type> &B)
@@ -16,10 +16,10 @@ type cross(const pair<type,type> &O, const pair<type, type> &A, const pair<type,
     return (type)(A.first - O.first) * (B.second - O.second) - (type)(A.second - O.second) * (B.first - O.first);
 }
 template<typename type>
-vector<pair<type,type>> convex_hull(vector<pair<type, type>> map)
+vector<pair<type,type> > convex_hull(vector<pair<type, type> > map)
 {
     int k = 0;
-    vector<pair<type, type>> result(2 * map.size());
+    vector<pair<type, type> > result(2 * map.size());
     sort(map.begin(), map.end(), [](pair<type,type> p, pair<type,type> q) { return p.second > q.second || ((!(p.second < q.second) && p.first < q.first)); });
     for (int i = 0; i < map.size(); ++i) 
     {

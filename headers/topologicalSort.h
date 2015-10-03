@@ -30,7 +30,7 @@ vector<type> topologicalSort(vector<type> map)
 			topologicalSort_sub(i,map,result,order);
 	reverse(order.begin(), order.end());
 	for(int i = 0; i < map.size(); i++)
-		for(int j = i + 1; j < n; j++)
+		for(int j = i + 1; j < map.size(); j++)
 			if(map[order[j]][order[i]])
 				return vector<type>();
 	return order;
