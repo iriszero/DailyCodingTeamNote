@@ -199,6 +199,36 @@ void Combination(int** c, int n) {
 		}
 	}
 }
+
+//Created by Maybe 10/3/15
+//chinese_remainder_Theorem
+/* if there is a possibility of k being very big, then prime factorize m[i],
+* find modular inverse of 'temp' of each of the factors
+* 'k' equals to the multiplication ( modular mods[i] ) of modular inverses
+*/
+template <typename type>
+type chinese_remainder(const vector<type>& r, const vector<type>& mods)
+{
+	type M = 1;
+	for (size_t i = 0; i<size_t(mods.size()); i++) M *= mods[i];
+	vector< type > m, s;
+	for (size_t i = 0; i<size_t(mods.size()); i++) {
+		m.push_back(M / mods[i]);
+		type temp = m[i] % mods[i];
+		type k = 0;
+		while (true) {
+			if ((k*temp) % mods[i] == 1) break;
+			k++;
+		}
+		s.push_back(k);
+	}
+	long long ret = 0;
+	for (int i = 0; i<int(s.size()); i++) {
+		ret += ((m[i] * s[i]) % M *r[i]) % M;
+		if (ret >= M) ret -= M;
+	}
+	return ret;
+}
 int main(void) {
 
 
