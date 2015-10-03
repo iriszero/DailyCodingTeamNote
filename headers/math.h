@@ -229,6 +229,29 @@ type chinese_remainder(const vector<type>& r, const vector<type>& mods)
 	}
 	return ret;
 }
+
+
+//Created by Maybe 10/3/15
+//catalan_number
+/*can refix binomial function to use lucas, pascal triangle for performance.
+*/
+template<typename type>
+long long int binomial(type n, type m) 
+{
+	if (n > m || n < 0) return 0;
+	long long int ans = 1, ans2 = 1;
+	for (int i = 0 ; i < m ; i++) {
+	ans *= n - i;
+	ans2 *= i + 1;
+	}
+	return ans/ans2;
+}
+
+template<typename type>
+type catalan_number(type n) {
+return binomial(n * 2, n) / (n + 1);
+}
+
 int main(void) {
 
 
