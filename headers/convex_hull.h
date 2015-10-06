@@ -15,6 +15,10 @@ type cross(const pair<type,type> &O, const pair<type, type> &A, const pair<type,
 {
     return (type)(A.first - O.first) * (B.second - O.second) - (type)(A.second - O.second) * (B.first - O.first);
 }
+
+// param:: vector of Point with x,y coordinates in long long int, P.size >= 3
+// return:: convex_hull with x, y coordinates in long long int
+// the first and the last element is SAME
 template<typename type>
 vector<pair<type,type> > convex_hull(vector<pair<type, type> > map)
 {
