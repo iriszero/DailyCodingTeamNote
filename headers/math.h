@@ -249,7 +249,7 @@ long long int binomial(type n, type m)
 
 template<typename type>
 type catalan_number(type n) {
-return binomial(n * 2, n) / (n + 1);
+    return binomial(n * 2, n) / (n + 1);
 }
 
 int main(void) {
