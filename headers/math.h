@@ -5,6 +5,7 @@
 //  Created by IRIS on 9/7/15.
 //  Copyright (c) 2015 IRIS. All rights reserved.
 //
+#pragma once
 #include <stdio.h>
 #include <math.h>
 #include <vector>
@@ -171,6 +172,8 @@ T combination(T n, T r, T MOD) {
 	return ret;
 }
 
+
+//sign of return value is same as the variable {a} (not always positive)
 template<typename T>
 T gcd(T a, T b) {
 	return (b == 0) ? a : gcd(b, a%b);
@@ -252,10 +255,9 @@ type catalan_number(type n) {
     return binomial(n * 2, n) / (n + 1);
 }
 
-int main(void) {
-
-
-	return 0;
+template<typename T>
+T abs(T a) {
+    return (a>=0)? a: -a;
 }
 
 /*PRIME NUMBERS

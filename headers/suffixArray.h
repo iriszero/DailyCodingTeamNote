@@ -5,6 +5,7 @@
 //  Created by MaybeS on 10/3/15.
 //  Copyright (c) 2015 Maybe. All rights reserved.
 //
+#pragma once
 
 #include <vector>
 #include <iostream>
