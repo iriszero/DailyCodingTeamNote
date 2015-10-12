@@ -5,6 +5,8 @@
 //  Created by IRIS on 9/3/15.
 //
 
+#pragma once
+
 #ifndef _903_bitpartite_matching_h
 #define _903_bitpartite_matching_h
 #endif

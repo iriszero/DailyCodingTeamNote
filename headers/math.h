@@ -5,6 +5,7 @@
 //  Created by IRIS on 9/7/15.
 //  Copyright (c) 2015 IRIS. All rights reserved.
 //
+#pragma once
 #include <stdio.h>
 #include <math.h>
 #include <vector>
