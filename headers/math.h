@@ -171,6 +171,8 @@ T combination(T n, T r, T MOD) {
 	return ret;
 }
 
+
+//sign of return value is same as the variable {a} (not always positive)
 template<typename T>
 T gcd(T a, T b) {
 	return (b == 0) ? a : gcd(b, a%b);
