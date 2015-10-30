@@ -27,8 +27,14 @@ void buildTable(string& w, VI& t)
   
   while(i < w.length())
   {
-    if(w[i-1] == w[j]) { t[i] = j+1; i++; j++; }
-    else if(j > 0) j = t[j];
+    if(w[i-1] == w[j]) 
+	{
+		t[i] = j+1; 
+		i++; 
+		j++; 
+	}
+    else if(j > 0) 
+    	j = t[j];
     else { t[i] = 0; i++; }
   }
 }
@@ -44,12 +50,14 @@ int KMP(string& s, string& w)
     if(w[i] == s[m+i])
     {
       i++;
-      if(i == w.length()) return m;
+      if(i == w.length()) 
+      	return m;
     }
     else
     {
       m += i-t[i];
-      if(i > 0) i = t[i];
+      if(i > 0) 
+      	i = t[i];
     }
   }  
   return s.length();
