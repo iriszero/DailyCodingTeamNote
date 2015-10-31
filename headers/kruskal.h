@@ -10,8 +10,6 @@
 // Time: 	O(ElogV)
 //			E: vertices, V: edges
 //
-// Init: segment_tree tree(vector,[](int a, int b){return a+b; });
-// 		in this case(sum), INF must be 0(must not interfere)
 
 
 #include <algorithm>
