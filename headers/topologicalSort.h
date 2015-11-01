@@ -1,9 +1,14 @@
 //
-//  topologicalSort.h
-//  DailyCodingTeamNote
+// topologicalSort.h
 //
-//  Created by MaybeS on 10/3/15.
-//  Copyright (c) 2015 Maybe. All rights reserved.
+// TopologicalSort
+//
+// INPUT: vector 
+//
+// OUTPUT: if directed acycilc graph return DAG; 
+//
+// Time: 	theta(n+m)
+//			n: edges	m: vertices
 //
 #pragma once
 #include <vector>
@@ -11,8 +16,6 @@
 #include <algorithm>
 
 using namespace std;
-//Toplogical Sort
-//위상정렬. DAG가 아니면 빈 벡터 반환
 template<typename type>
 void topologicalSort_sub(size_t index, vector<type>& map, vector<type>& result, vector<type>& order)
 {
