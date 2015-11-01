@@ -1,3 +1,16 @@
+//
+// trie.h
+//
+// trie struct for string search
+//
+// INPUT: vector<string> (keys)
+//
+// OUTPUT: if string in keys
+//
+// Time: 	O(M)
+//			M: string length
+//
+//refix define for None-Alphabet
 #include <string>
 #include <vector>
 using namespace std;
