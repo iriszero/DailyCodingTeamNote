@@ -49,14 +49,12 @@ private:
 	}
 	void insert(const string& key)
 	{
-		int level;
-		int index;
 		this->root_.count++;
 		trie_node * pCrawl = this->root_.root;
 
 		for (size_t i = 0; i < key.length(); i++)
 		{
-			index = INDEXING(key[i]);
+			int index = INDEXING(key[i]);
 			if (!pCrawl->children[index])
 				pCrawl->children[index] = this->getNode();
 
