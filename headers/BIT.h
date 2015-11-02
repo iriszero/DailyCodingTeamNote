@@ -12,7 +12,6 @@
 //
 #include <algorithm>
 #include <vector>
-#include <functional>
 
 using namespace std;
 template<typename Te, typename Tv>
